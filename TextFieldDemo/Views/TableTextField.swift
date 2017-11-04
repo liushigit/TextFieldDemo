@@ -8,62 +8,42 @@
 
 import Cocoa
 
+
+//extension String {
+//    func size(withConstrainedHeight height: CGFloat, font: NSFont) -> CGSize {
+//        let constraintSize = CGSize(width: .greatestFiniteMagnitude,
+//                                    height: height)
+//        let boundingBox = self.bou
+//        let att
+//    }
+//}
+
+extension NSAttributedString {
+    func size(withConstrainedHeight height: CGFloat, font: NSFont) -> CGSize {
+        let constraintRect = CGSize(width: .greatestFiniteMagnitude,
+                                    height: height)
+        let boundingBox = self.boundingRect(with: constraintRect,
+                                            options: .usesLineFragmentOrigin)
+        let size = boundingBox.size
+        return CGSize(width: size.width - 1.5, height: size.height)
+    }
+}
+
 class TableTextField: NSTextField {
     var isEditing = false
 
-/*
-    override func setFrameSize(_ newSize: NSSize) {
-        if let editor = self.currentEditor() as? NSTextView {
-            editor.invalidateTextContainerOrigin()
-        }
-        
-        super.setFrameSize(newSize)
-    }
-
-    override var frame: NSRect {
-        set {
-            if let editor = self.currentEditor() as? NSTextView {
-                editor.invalidateTextContainerOrigin()
-            }
-            super.frame = newValue
-        }
-        
-        get {
-            return super.frame
-        }
-    }
-*/
+    // The text will jiggle a little bit during editing.
+    // Still not a good solution.
+    // Checkout the initial commit to see the original implementation.
     override var intrinsicContentSize: NSSize {
         if isEditing {
             if let fieldEditor =
                 self.window?.fieldEditor(false, for: self) as?
                     NSTextView
             {
-                // Approach #1
-//                let cell = NSTextFieldCell(textCell: fieldEditor.string)
-//                cell.stringValue = fieldEditor.string
-//                cell.lineBreakMode = .byClipping
-//                cell.usesSingleLineMode = true
-//                cell.wraps = false
-//                var size = cell.cellSize
-//                size.width += 5.0
-//                size.height += 1.0
-                
-                // Approach #2
-                let rect = fieldEditor.layoutManager!.usedRect(
-                    for: fieldEditor.textContainer!
-                )
-                
-                let size = rect.size
-                #if DEBUG
-                    print(#file, #line, size)
-                #endif
-
-                return size
-                // Approach #3
-//                let cellCopy = self.cell!.copy() as! NSTextFieldCell
-//                cellCopy.stringValue = fieldEditor.string
-//                return cellCopy.cellSize
+                return attributedStringValue.size(
+                    withConstrainedHeight: 1000,
+                    font: fieldEditor.font!)
             }
         }
         return self.cell!.cellSize

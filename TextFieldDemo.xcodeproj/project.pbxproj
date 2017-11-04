@@ -17,6 +17,7 @@
 		D20194AE1FA57306001C304B /* SidebarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20194AD1FA57306001C304B /* SidebarItem.swift */; };
 		D20194B01FA5777E001C304B /* SimpleSidebarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20194AF1FA5777E001C304B /* SimpleSidebarItem.swift */; };
 		D272F1EC1FA59A5900D1DC86 /* TableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D272F1EB1FA59A5900D1DC86 /* TableTextField.swift */; };
+		D2F5DC531FA9D6A700066E90 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F5DC521FA9D6A700066E90 /* WindowController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		D20194AD1FA57306001C304B /* SidebarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarItem.swift; sourceTree = "<group>"; };
 		D20194AF1FA5777E001C304B /* SimpleSidebarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleSidebarItem.swift; sourceTree = "<group>"; };
 		D272F1EB1FA59A5900D1DC86 /* TableTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableTextField.swift; sourceTree = "<group>"; };
+		D2F5DC521FA9D6A700066E90 /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				D20194AA1FA56B65001C304B /* SidebarViewController.swift */,
+				D2F5DC521FA9D6A700066E90 /* WindowController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				D201947D1FA55E05001C304B /* ViewController.swift in Sources */,
 				D201947B1FA55E05001C304B /* AppDelegate.swift in Sources */,
 				D20194B01FA5777E001C304B /* SimpleSidebarItem.swift in Sources */,
+				D2F5DC531FA9D6A700066E90 /* WindowController.swift in Sources */,
 				D20194AE1FA57306001C304B /* SidebarItem.swift in Sources */,
 				D272F1EC1FA59A5900D1DC86 /* TableTextField.swift in Sources */,
 				D20194AB1FA56B65001C304B /* SidebarViewController.swift in Sources */,
