@@ -25,7 +25,7 @@ extension NSAttributedString {
         let boundingBox = self.boundingRect(with: constraintRect,
                                             options: .usesLineFragmentOrigin)
         let size = boundingBox.size
-        return CGSize(width: size.width - 1.5, height: size.height)
+        return CGSize(width: size.width, height: size.height)
     }
 }
 
@@ -47,6 +47,13 @@ class TableTextField: NSTextField {
             }
         }
         return self.cell!.cellSize
+    }
+    
+    override var alignmentRectInsets: NSEdgeInsets {
+        return NSEdgeInsets(top: 0.0,
+                            left: 4.0,
+                            bottom: 0.0,
+                            right: 4.0)
     }
     
     override func textDidBeginEditing(_ notification: Notification) {
